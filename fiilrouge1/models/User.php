@@ -12,6 +12,9 @@ static public function getAll(){
 		$stmt = null;
 	}
 
+
+	
+
 static public function delete($data){
 		$idc = $data['idc'];
 		try{
@@ -70,12 +73,15 @@ static public function delete($data){
 
 	
 	static public function createUser($data){
-		$stmt = DB::connect()->prepare('INSERT INTO users (fullname,email,phone,psd )
-			VALUES (:fullname,:email,:phone,:psd)');
-		$stmt->bindParam(':fullname',$data['fullname']);
+		$stmt = DB::connect()->prepare('INSERT INTO users (first_name, last_name, email ,pass ,phone, bio, cweight )
+			VALUES (:first_name,:last_name,:email,:pass,:phone,:bio,:cweight)');
+		$stmt->bindParam(':first_name',$data['first_name']);
+		$stmt->bindParam(':last_name',$data['last_name']);
 		$stmt->bindParam(':email',$data['email']);
+		$stmt->bindParam(':pass',$data['pass']);
 		$stmt->bindParam(':phone',$data['phone']);
-		$stmt->bindParam(':psd',$data['psd']);
+		$stmt->bindParam(':bio',$data['bio']);
+		$stmt->bindParam(':cweight',$data['cweight']);
 
 		if($stmt->execute()){
 			return 'ok';
@@ -125,4 +131,5 @@ static public function getUser($data){
 
 }
 
- ?>
+
+?>

@@ -17,7 +17,7 @@
       <div class="row">
     <div class="col-md-12">
         <h1 style = "color: white; font-weight: bold">MYHBMI</h1><br>
-      <form action="" method="post">
+      <form method="post">
         <h1> login </h1>
         
         <fieldset>
@@ -29,13 +29,19 @@
           <input type="email" id="mail" name="email" placeholder="enter your email">
        
           <label for="password">Password:</label>
-          <input type="password" id="password"  name="password" placeholder ="enter your password">
+          <input type="password" id="password"  name="pass" placeholder ="enter your password">
         
           
         </fieldset>
+        Customer <input type='radio' name='user_type' value='Customer' checked/> 
+        Administrator <input type='radio' name='user_type' value='Administrator'/>
         
        
-        <button type="submit">login</button>
+        <button name="submit" class="btn btn-outline-light">Connexion</button>
+        <div class="sho">
+		
+
+		</div>
         <a href="register" class=" text-blue">sign up here</a>
         
        </form>

@@ -6,8 +6,8 @@ require_once './controllers/HomeController.php';
 
 $home = new HomeController();  
 
-$userpages = ['home','register','login','BMIcalculator', 'info', 'contact', 'about','bmis'];
-$adminpages = ['home','register','login','BMIcalculator','dashboard', 'info', 'contact', 'about', 'bmis'];
+$userpages = ['home','bmis', 'info', 'tips' ,'contact','acount' ,'about'];
+$adminpages = ['home','bmis','dashboard', 'info', 'tips','acount' , 'contact', 'about', 'bmis'];
 
 
 if(isset($_SESSION['logged']) && $_SESSION['logged'] === true){
@@ -24,6 +24,7 @@ if(isset($_SESSION['logged']) && $_SESSION['logged'] === true){
 			include('views/includes/404.php');
 		}
 	}
+
 else if(isset($_GET['page']) && $_SESSION['user_type'] === 'Administrator'){
 	require_once './views/includes/header.php';
 		if(in_array($_GET['page'],$adminpages)){
@@ -38,7 +39,7 @@ else if(isset($_GET['page']) && $_SESSION['user_type'] === 'Administrator'){
 
 
 	else{
-		$home->index('home');
+		$home->index('bmis');
 	}
 
 }

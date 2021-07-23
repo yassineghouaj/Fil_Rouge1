@@ -1,7 +1,7 @@
 <?php 
 	if(isset($_POST['submit'])){
 		$loginUser = new UsersController();
-		$loginUser->auth();
+		$loginUser->register();
 	}
 ?>
 
@@ -28,17 +28,17 @@
           <legend><span class="number">1</span> Your Basic Info</legend>
         
           <label for="name">first name:</label>
-          <input type="text" id="name" name="fname" placeholder="enter your firstname">
+          <input type="text" id="name" name="first_name" placeholder="enter your firstname">
 
           
           <label for="name">last name:</label>
-          <input type="text" id="name" name="lname" placeholder="enter your lastname">
+          <input type="text" id="name" name="last_name" placeholder="enter your lastname">
         
           <label for="email">Email:</label>
           <input type="email" id="mail" name="email" placeholder="enter your email">
        
           <label for="password">Password:</label>
-          <input type="password" id="password"  name="password" placeholder ="enter your password">
+          <input type="password" id="password"  name="pass" placeholder ="enter your password">
 
           <label for="phone">Phone:</label>
           <input type="phone" id="phone"  name="phone" placeholder = "enter your phone">
@@ -60,8 +60,8 @@
              
          </fieldset>
        
-        <button type="submit">Sign Up</button>
-        <a href="login.php" class=" text-blue"> already have acount ! login here</a>
+        <button name="submit" class="btn btn-outline-light">Inscription</button>
+        <a href="login" class=" text-blue"> already have acount ! login here</a>
         
        </form>
         </div>

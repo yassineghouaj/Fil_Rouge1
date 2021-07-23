@@ -2,19 +2,47 @@
 
 
 
-class BMIController{
+class BmisController{
 
-	public function getAllMBI(){
-		$BMIS = Bmi::getAll();
-		return $BMIS;
+	public function getAllBmis(){
+		$bmis = Bmi::getAll();
+		return $bmis;
 	}
- 
+
+
+	public function findBmi(){ 
+		if(isset($_POST['Search'])){
+			$data = array(
+				'height' => $_POST['height'],
+				'weight' => $_POST['weight']
+				
+			);
+		}
+		$bmis = Bmi::getBySearch($data);
+		return $bmis;
+	} 
+
+
+	public function getOneBmi(){
+		if(isset($_POST['idb'])){
+			$data = array(
+				'idb' => $_POST['idb']
+			);
+			$bmi = Bmi::getBmi($data);
+			return $bmi;
+		}
+	}
+
+
 
 public function updateBMI(){
 		if(isset($_POST['update'])){
 			$data = array(
 				'idb' => $_POST['idb'],
-				'currentWeight' => $_POST['currentWeight'],
+				'gender' => $_POST['gender'],
+				'age' => $_POST['age'],
+				'height' => $_POST['height'],
+				'weight' => $_POST['weight'],
 				
 			
 				
@@ -29,16 +57,16 @@ public function updateBMI(){
 		}
 	}
 
+
 	public function addBMI(){
 		if(isset($_POST['add'])){
 			$data = array(
-
-				
-				'age' => $_POST['age'],
-				
 				'gender' => $_POST['gender'],
-				'weight' => $_POST['weight'],
+                'age' => $_POST['age'],
 				'height' => $_POST['height'],
+				
+				'weight' => $_POST['weight'],
+				
 			);
 			$result = Bmi::add($data);
 			if($result === 'ok'){
@@ -52,7 +80,8 @@ public function updateBMI(){
 
 	
 
-public function deleteBMI(){
+
+public function deleteBmi(){
 		if(isset($_POST['idb'])){
 			$data['idb'] = $_POST['idb'];
 			$result = Bmi::delete($data);
@@ -64,6 +93,7 @@ public function deleteBMI(){
 			}
 		}
 	}
+
 
 
 

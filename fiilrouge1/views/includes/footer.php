@@ -10,7 +10,7 @@
             data-ripple-color="light">
           
             <img
-              src="https://mdbootstrap.com/img/new/fluid/city/120.jpg"
+              src="https://cdn.pixabay.com/photo/2016/09/18/14/21/swimmer-1678307_960_720.jpg"
               class="w-100"
             />
             <a href="#!">

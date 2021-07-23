@@ -6,7 +6,8 @@
 					<h2 class="text-white">
 						there is nothing here go back!!!
 					</h2>
-					<a href="<?php echo BASE_URL;?>" class="btn btn-outline-white text-white">Home</a>
+				
+					<a href="bmis" class="btn btn-outline-white text-white">back</a>
 				</div>
 			</div>
 		</div>

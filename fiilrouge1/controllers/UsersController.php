@@ -28,14 +28,14 @@ public function deleteUser(){
 	public function auth(){
 		if(isset($_POST['submit'])){
 			$data['email'] = $_POST['email'];
-			$data['password'] = $_POST['password'];
+			$data['pass'] = $_POST['pass'];
 			$data['user_type']=$_POST['user_type'];
 			$result = User::login($data);
-			if($result->email === $_POST['email'] && $result->psd === $_POST['password'] && $_POST['user_type']=='Customer'){
+			if($result->email === $_POST['email'] && $result->pass === $_POST['pass'] && $_POST['user_type']=='Customer'){
 
 				$_SESSION['logged'] = true;
 				$_SESSION['email'] = $result->email;
-				$_SESSION['fullname'] = $result->fullname;
+				$_SESSION['first_name'] = $result->first_name;
 				$_SESSION['id'] = $result->id;
 				$_SESSION['user_type'] ='Customer';
 			
@@ -43,16 +43,16 @@ public function deleteUser(){
 				Redirect::to('home');
 
 			}
-			else if($result->email === $_POST['email'] && $result->psd === $_POST['password'] && $_POST['user_type']=='Administrator'){
+			else if($result->email === $_POST['email'] && $result->pass === $_POST['pass'] && $_POST['user_type']=='Administrator'){
 
 				$_SESSION['logged'] = true;
 				$_SESSION['email'] = $result->email;
-				$_SESSION['fullname'] = $result->fullname;
+				$_SESSION['first_name'] = $result->first_name;
 				$_SESSION['id'] = $result->id;
 				$_SESSION['user_type'] ='Administrator';
 			
 				
-				Redirect::to('dashbord');
+				Redirect::to('dashboard');
 
 			}
 			
@@ -68,10 +68,10 @@ public function deleteUser(){
 			
 		
 			$data = array(
-				'firstname' => $_POST['firstname'],
-				'lastname' => $_POST['lastname'],
+				'first_name' => $_POST['first_name'],
+				'last_name' => $_POST['last_name'],
                 'email' => $_POST['email'],
-                'password' => $_POST['password'],
+                'pass' => $_POST['pass'],
 				'phone' => $_POST['phone'],
                 'bio' => $_POST['bio'],
                 'cweight' => $_POST['cweight']
