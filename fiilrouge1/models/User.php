@@ -73,15 +73,15 @@ static public function delete($data){
 
 	
 	static public function createUser($data){
-		$stmt = DB::connect()->prepare('INSERT INTO users (first_name, last_name, email ,pass ,phone, bio, cweight )
-			VALUES (:first_name,:last_name,:email,:pass,:phone,:bio,:cweight)');
+		$stmt = DB::connect()->prepare('INSERT INTO users (first_name, last_name, email ,pass ,phone, bio )
+			VALUES (:first_name,:last_name,:email,:pass,:phone,:bio)');
 		$stmt->bindParam(':first_name',$data['first_name']);
 		$stmt->bindParam(':last_name',$data['last_name']);
 		$stmt->bindParam(':email',$data['email']);
 		$stmt->bindParam(':pass',$data['pass']);
 		$stmt->bindParam(':phone',$data['phone']);
 		$stmt->bindParam(':bio',$data['bio']);
-		$stmt->bindParam(':cweight',$data['cweight']);
+
 
 		if($stmt->execute()){
 			return 'ok';
@@ -97,13 +97,14 @@ static public function delete($data){
 
 static public function update($data){
 	$idc = $data['idc'];
-		$stmt = DB::connect()->prepare('UPDATE users SET fullname= :fullname,email=:email,phone=:phone,psd=:psd WHERE idc=:idc');
+		$stmt = DB::connect()->prepare('UPDATE users SET firstname= :firstname,lastname=:lastname,email=:email,password=:password, phone=:phone WHERE idc=:idc');
 		$stmt->bindParam(':idc',$data['idc']);
-		$stmt->bindParam(':fullname',$data['fullname']);
-		
+		$stmt->bindParam(':firstname',$data['firstname']);
+		$stmt->bindParam(':lastname',$data['lastname']);
 		$stmt->bindParam(':email',$data['email']);
+		$stmt->bindParam(':password',$data['password']);
 		$stmt->bindParam(':phone',$data['phone']);
-		$stmt->bindParam(':psd',$data['psd']);
+		
 			
 		if($stmt->execute()){
 			return 'ok';

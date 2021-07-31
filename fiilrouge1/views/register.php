@@ -53,8 +53,7 @@
           <textarea id="bio" name="bio" placeholder="a little about your self "></textarea>
         
          
-         <label for="job">current weight:</label>
-         <input type="number" id="number"  name="cweight" placeholder = "enter your current weight">
+  
          
           
              

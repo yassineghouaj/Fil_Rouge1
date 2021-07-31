@@ -74,7 +74,7 @@ public function deleteUser(){
                 'pass' => $_POST['pass'],
 				'phone' => $_POST['phone'],
                 'bio' => $_POST['bio'],
-                'cweight' => $_POST['cweight']
+                
 				
 			);
 			$result = User::createUser($data);
@@ -97,14 +97,14 @@ public function deleteUser(){
 public function updateUser(){
 		if(isset($_POST['submit'])){
 			$data = array(
-				'id' => $_SESSION['id'] ,
+				'idc' => $_SESSION['idc'] ,
 				'firstname' => $_POST['firstname'],
 				'lastname' => $_POST['lastname'],
                 'email' => $_POST['email'],
                 'password' => $_POST['password'],
 				'phone' => $_POST['phone'],
                 'bio' => $_POST['bio'],
-                'cweight' => $_POST['cweight']
+                
 				
 				
 			);

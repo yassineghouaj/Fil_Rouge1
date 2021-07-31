@@ -12,10 +12,10 @@
 
 </head>
 <body >
-	    <nav id="navm" class="navbar navbar-expand-lg" style= "background-color: blue; color: white">
-		<a class="navbar-brand" href="home" style =" color: white">MYHBMI</a>
+	    <nav id="navm" class="navbar navbar-expand-lg" style= "background-color:#444 ; color: white">
+		<a class="navbar-brand" href="home" style =" color: white; margin-right:50px">MYHBMI</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
+			
 		</button>
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">

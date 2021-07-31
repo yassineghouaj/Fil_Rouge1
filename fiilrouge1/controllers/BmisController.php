@@ -60,21 +60,35 @@ public function updateBMI(){
 
 	public function addBMI(){
 		if(isset($_POST['add'])){
+			$heightmeter = $_POST['height'] * 0.01;
+			$result = $_POST['weight'] / ($heightmeter * $heightmeter);
 			$data = array(
 				'gender' => $_POST['gender'],
                 'age' => $_POST['age'],
-				'height' => $_POST['height'],
-				
+				'height' => $heightmeter,
 				'weight' => $_POST['weight'],
+				'user_id' => $_SESSION['first_name'],
+				'result' => $result,
+				$_SESSION['result'] = $result
+
 				
 			);
 			$result = Bmi::add($data);
 			if($result === 'ok'){
 				Session::set('success','Bmi  added!!');
-				Redirect::to('bmis');
+				Redirect::to('info');
 			}else{
 				echo $result;
 			}
+		}
+	}
+	public function result(){
+		if(isset($_POST['idb'])){
+			$data = array(
+				'idb' => $_POST['idb']
+			);
+			$bmi = Bmi::getResult($data);
+			return $bmi;
 		}
 	}
 

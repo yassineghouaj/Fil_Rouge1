@@ -6,8 +6,8 @@ require_once './controllers/HomeController.php';
 
 $home = new HomeController();  
 
-$userpages = ['home','bmis', 'info', 'tips' ,'contact','acount' ,'about'];
-$adminpages = ['home','bmis','dashboard', 'info', 'tips','acount' , 'contact', 'about', 'bmis'];
+$userpages = ['home','bmis', 'info', 'tips' ,'contact','acount' ,'about','logout'];
+$adminpages = ['home','bmis','dashboard', 'info', 'tips','acount' , 'contact', 'about', 'bmis', 'logout'];
 
 
 if(isset($_SESSION['logged']) && $_SESSION['logged'] === true){

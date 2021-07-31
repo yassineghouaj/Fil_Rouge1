@@ -17,6 +17,38 @@
 
 <div class = "middle">
 <small>it s all about your health</small>
+<!---------------------------------------------------------->
+
+<div class="d-flex justify-content-around">
+  <div class="col">
+      <img src= "https://media.istockphoto.com/photos/various-sport-equipments-on-grass-picture-id949190756?k=6&m=949190756&s=612x612&w=0&h=dNek5l5xc68G0gCZv-fe0vHP8kjDpAYFrRnSPh8iLyc=">
+  </div>
+  <div class="col">
+
+  </div>
+  <div class="col">
+
+  </div>
+</div>
+
+    <button
+      class="carousel-control-prev"
+      type="button"
+      tabindex="0"
+      data-mdb-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      tabindex="0"
+      data-mdb-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </button>
+  </div>
+</div>
 </div>
 <div class="home-page">
   <div class="block">
@@ -28,10 +60,7 @@
     <img src="https://media.giphy.com/media/K61ByIKDUSs9P2KdGY/giphy.gif" alt="An illustration of me in profile">
   </div>
 </div>
-</middle>
-<footer>
-<small>All content &copy; yassine GHOUAJ. All rights reserved.</small>
-</footer>
+
 </div>
     </body>
 </html>
