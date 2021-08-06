@@ -1,4 +1,6 @@
 
+
+<body>
 <main>
 <div class="home-page">
   <div class="block">
@@ -17,7 +19,7 @@
 
 <div class = "middle">
 <small>it s all about your health</small>
-<!---------------------------------------------------------->
+
 
 <div class="d-flex justify-content-around">
   <div class="col">
@@ -62,5 +64,5 @@
 </div>
 
 </div>
-    </body>
-</html>
+
+</body>

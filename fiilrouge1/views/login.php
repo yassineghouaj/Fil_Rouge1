@@ -19,25 +19,26 @@
         <h1 style = "color: white; font-weight: bold">MYHBMI</h1><br>
       <form method="post">
         <h1> login </h1>
-        
+        <?php include('./views/includes/alerts.php');?>
         <fieldset>
             <h1 style = "color :green  ; font-weight : bold; text-align : center ; margin-top : 50px">Welcome to MYHBMI</h1>
             <h3 style = "color: green">“You can’t control what goes on outside, but you CAN control what goes on inside.”</h3><br><br>
           
         
           <label for="email">Email:</label>
-          <input type="email" id="mail" name="email" placeholder="enter your email">
+          <input type="email" id="mail" name="email" placeholder="enter your email" required>
        
           <label for="password">Password:</label>
-          <input type="password" id="password"  name="pass" placeholder ="enter your password">
+          <input type="password" id="password"  name="pass" placeholder ="enter your password" required>
         
           
         </fieldset>
+        
         Customer <input type='radio' name='user_type' value='Customer' checked/> 
         Administrator <input type='radio' name='user_type' value='Administrator'/>
         
        
-        <button name="submit" class="btn btn-outline-light">Connexion</button>
+        <button name="submit" >Connexion</button>
         <div class="sho">
 		
 

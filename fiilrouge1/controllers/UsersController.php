@@ -29,18 +29,19 @@ public function deleteUser(){
 		if(isset($_POST['submit'])){
 			$data['email'] = $_POST['email'];
 			$data['pass'] = $_POST['pass'];
-			$data['user_type']=$_POST['user_type'];
+			$data['user_type'] = $_POST['user_type'];
 			$result = User::login($data);
 			if($result->email === $_POST['email'] && $result->pass === $_POST['pass'] && $_POST['user_type']=='Customer'){
 
 				$_SESSION['logged'] = true;
 				$_SESSION['email'] = $result->email;
 				$_SESSION['first_name'] = $result->first_name;
-				$_SESSION['id'] = $result->id;
+				$_SESSION['last_name'] = $result->last_name;
+				$_SESSION['idc'] = $result->idc;
 				$_SESSION['user_type'] ='Customer';
 			
 				
-				Redirect::to('home');
+				Redirect::to('bmis');
 
 			}
 			else if($result->email === $_POST['email'] && $result->pass === $_POST['pass'] && $_POST['user_type']=='Administrator'){
@@ -57,6 +58,7 @@ public function deleteUser(){
 			}
 			
 			else{
+
 				Session::set('error',' incorrect info!!');
 				Redirect::to('login');
 			}

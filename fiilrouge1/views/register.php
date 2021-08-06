@@ -23,7 +23,7 @@
         
         <fieldset>
             <h1 style = "color :green  ; font-weight : bold; text-align : center ; margin-top : 50px">Welcome to MYHBMI</h1>
-               <h3 style = "color: green">“A good laugh and a long sleep are the best cures in the doctor’s book.”</h3><br><br>
+               <h3 style = "color: green; font-style:monospace;">“A good laugh and a long sleep are the best cures in the doctor’s book.”</h3><br><br>
           
           <legend><span class="number">1</span> Your Basic Info</legend>
         
@@ -53,13 +53,10 @@
           <textarea id="bio" name="bio" placeholder="a little about your self "></textarea>
         
          
-  
          
-          
-             
          </fieldset>
        
-        <button name="submit" class="btn btn-outline-light">Inscription</button>
+        <button name="submit" >Inscription</button>
         <a href="login" class=" text-blue"> already have acount ! login here</a>
         
        </form>

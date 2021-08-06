@@ -3,21 +3,8 @@ if (isset($_POST['add'])) {
   $newBmi = new BmisController();
   $newBmi->addBMI();
 
-
-
 }
 ?>
-<!DOCTYPE html>
-
-<head>
-  <title></title>
-
-
-  <html lang="en">
-
-  <link rel="stylesheet" href="">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
 
 
 <body><br>
@@ -43,67 +30,13 @@ if (isset($_POST['add'])) {
 
     </fieldset>
 
-    <button type="submit" value="submit" name="add" style="background-color: blue">Calculate</button>
+    <button type="submit" value="submit" name="add" class="btn btn-dark">Calculate</button>
 
 
 
     </div>
-  </form>
-  <button onclick="result()">add</button>
-  <?php
-       //echo " you weight is" ," ".$_SESSION['result']."";
-  ?>
-  <div id="result">
-    <label for="weight">result</label>
-    
-  </div>
+  </form><br>
 
-
-
-  <script>
-    
-    //document.getElementById('result').style.display = "none";
-
-    function result() {
-      
-      var age = document.getElementById('age').value;
-      var height = document.getElementById('height').value;
-      var weight = document.getElementById('weight').value;
-
-     
-
-         console.log(age);
-      
-
-
-
-    }
-
-
-
-
-
-    /*var choice = document.getElementById("gender");
-    var selectedgender = choice.options[choice.selectedgender].text;*/
-
-   /* function goBack() {
-      console.log('stay here!!')
-  history.back();
-}
-
-
-    /*var male = "male";
-
-       function g(){
-         if (selectedgender == 'Male'){
-             console.log('gender selected');
-         }
-         else {
-             alert("no");
-         }
-
-        }*/
-  </script>
 </body>
 
 </html>
