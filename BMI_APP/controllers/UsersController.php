@@ -1,0 +1,141 @@
+<?php 
+
+class UsersController {
+
+
+
+public function getAllUsers(){
+		$users = User::getAll();
+		return $users;
+	}
+
+
+
+public function deleteUser(){
+		if(isset($_POST['id'])){
+			$data['id'] = $_POST['id'];
+			$result = User::delete($data);
+			if($result === 'ok'){
+				Session::set('success','user deleted!!');
+				Redirect::to('users');
+			}else{
+				echo $result;
+			}
+		}
+	}
+
+
+	public function auth(){
+
+		if(isset($_POST['submit'])){
+			$data['email'] = $_POST['email'];
+			$data['pass'] = $_POST['pass'];
+			$admin = 'admin@gmail.com';
+
+		
+			$result = User::login($data);
+			if($result->email === $_POST['email'] && $result->pass === $_POST['pass'] && $_POST['email'] != $admin){
+
+				$_SESSION['logged'] = true;
+				$_SESSION['email'] = $result->email;
+				$_SESSION['first_name'] = $result->first_name;
+				$_SESSION['last_name'] = $result->last_name;
+				$_SESSION['idc'] = $result->idc;
+			
+			
+				
+				Redirect::to('bmis');
+
+			}
+			else if($_POST['email'] == $admin && $result->pass === $_POST['pass']){
+
+				$_SESSION['logged'] = true;
+				$_SESSION['email'] = $_POST['email'];
+				$_SESSION['first_name'] = $result->first_name;
+				$_SESSION['last_name'] = $result->last_name;
+				$_SESSION['idc'] = $result->idc;
+			
+			
+				
+				Redirect::to('dashboard');
+
+			}
+			
+			else{
+
+				Session::set('error',' incorrect info!!');
+				Redirect::to('login');
+			}
+		}
+	}
+
+	public function register(){
+		if(isset($_POST['submit'])){
+			
+		
+			$data = array(
+				'first_name' => $_POST['first_name'],
+				'last_name' => $_POST['last_name'],
+                'email' => $_POST['email'],
+                'pass' => $_POST['pass'],
+				'phone' => $_POST['phone'],
+                'bio' => $_POST['bio'],
+				// 'role' => 1,
+                
+				
+			);
+			$result = User::createUser($data);
+			if($result === 'ok'){
+				Session::set('success','your account has been created!!');
+				Redirect::to('login');
+			}else{
+				echo $result;
+			}
+		}
+	}
+
+
+	static public function logout(){
+		session_destroy();
+	}
+
+
+
+public function updateUser(){
+		if(isset($_POST['submit'])){
+			$data = array(
+				'idc' => $_SESSION['idc'] ,
+				'firstname' => $_POST['firstname'],
+				'lastname' => $_POST['lastname'],
+                'email' => $_POST['email'],
+                'password' => $_POST['password'],
+				'phone' => $_POST['phone'],
+                'bio' => $_POST['bio'],
+                
+				
+				
+			);
+			$result = User::update($data);
+			if($result === 'ok'){
+				Session::set('success','user modified!!');
+				Redirect::to('home');
+			}else{
+				echo $result;
+			}
+		}
+	}
+
+	
+public function getOneUser(){
+		
+			$data = array(
+				'id' => $_SESSION['id'] ,
+			);
+			$user = User::getUser($data);
+			return $user;
+		
+	}
+
+
+
+}
